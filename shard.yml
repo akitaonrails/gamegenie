@@ -1,0 +1,13 @@
+name: gamegenie
+version: 0.1.0
+
+authors:
+  - AkitaOnRails <fabioakita@gmail.com>
+
+targets:
+  gamegenie:
+    main: src/gamegenie.cr
+
+crystal: 0.34.0
+
+license: MIT
