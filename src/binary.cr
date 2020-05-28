@@ -1,6 +1,8 @@
 module Gamegenie
   module Binary
-    CONVERT = {
+    extend self
+
+    BIN_TO_HEX = {
       "0000" => "0",
       "0001" => "1",
       "0010" => "2",
@@ -23,7 +25,7 @@ module Gamegenie
       string_of_bytes = clean_bytes(string_of_bytes)
       String.build do |io|
         (0..28).step(4) do |x|
-          io << CONVERT[string_of_bytes[x, 4]] rescue IndexError
+          io << BIN_TO_HEX[string_of_bytes[x, 4]] rescue IndexError
         end
       end
     end

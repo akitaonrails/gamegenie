@@ -1,7 +1,5 @@
 module Gamegenie
   class Nintendo
-    include Binary
-
     LETTERS = {
       'A' => "0000",
       'P' => "0001",
@@ -38,7 +36,7 @@ module Gamegenie
     # 1ddd Efff Bccc Deee Abbb Faaa
 
     def decode_bytes(bytes)
-      bytes = clean_bytes(bytes)
+      bytes = Binary.clean_bytes(bytes)
       String.build do |io|
         io << "1"
         io << bytes[13, 3] # ddd
